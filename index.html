@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="header-top-left">
+                    <span class="search-icon material-symbols-sharp">search</span>
+                    <input class="search-bar" type="search">
+                </div>
+                <div class="header-top-right">
+                    <span class="material-symbols-sharp">notifications_active</span>
+                    <img class="profile-pic" src="images/profile-img-bear.jpg" alt="polar bear profile pic">
+                    <p>Morgan Oakley</p>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="header-bottom-left">
+                    <img class="user-profile-pic-big" src="images/profile-img-bear.jpg" alt="polar bear profile pic">
+                    <div>
+                        <p class="greeting-text">Hi, there,</p>
+                        <p class="username-greeting-name">Morgan Oakley (@morgan)</p>
+                    </div>
+                </div>
+                <div class="header-btns">
+                    <button class="header-btn">New</button>
+                    <button class="header-btn">Upload</button>
+                    <button class="header-btn">Share</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="sidebar">
+            <div class="link-cont">
+                <span id="dashboard-icon" class="material-symbols-sharp">dashboard</span>
+                <p class="dashboard-text">Dashboard</p>
+            </div>
+            <div class="main-sidebar-links">
+                <div class="link-cont">
+                    <span class="material-symbols-sharp">home</span>
+                    <p>Home</p>
+                </div>
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">badge</span></div>
+                    <p>Profile</p>
+                </div>
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">message</span></div>
+                    <p>Messages</p>
+                </div>
+                <div class="link-cont">
+                    <div class="icon"><span class="material-symbols-sharp">history</span></div>
+                    <p>History</p>
+                </div>
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">task</span></div>
+                    <p>Tasks</p>
+                </div>
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">groups</span></div>
+                    <p>Communities</p>
+                </div>
+            </div>
+            <div class="sec-sidebar-links">
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">settings</span></div>
+                    <p>Settings</p>
+                </div>
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">help_center</span></div>
+                    <p>Support</p>
+                </div>
+                <div class="link-cont">
+                    <div><span class="material-symbols-sharp">shield</span></div>
+                    <p>Privacy</p>
+                </div>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <div class="main-left">
+                <div class="main-titles">Your Projects</div>
+                <div class="projects-cont">
+                    <div class="project-cont">
+                        <div class="project-text">
+                            <p class="project-title">Super Funny Dadjoke</p>
+                            <p class="dadJoke"></p>
+                        </div>
+                        <div class="container-bottom">
+                            <button class="refresh-btn">New Joke</button>
+                            <div class="project-icons">
+                                <span class="material-symbols-sharp project-icon">star</span>
+                                <span class="material-symbols-sharp">visibility</span>
+                                <span class="material-symbols-sharp">share</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-cont">
+                        <div class="project-text">
+                            <p class="project-title">Business Speak</p>
+                            <p class="fact"></p>
+                        </div>
+                        <div class="project-icons">
+                            <span class="material-symbols-sharp project-icon">star</span>
+                            <span class="material-symbols-sharp">visibility</span>
+                            <span class="material-symbols-sharp">share</span>
+                        </div>
+                    </div>
+                    <div class="project-cont">
+                        <div class="project-text">
+                            <p class="project-title">Coming Soon</p>
+                            <p class="fun-fact"></p>
+                        </div>
+                        <div class="project-icons">
+                            <span class="material-symbols-sharp project-icon">star</span>
+                            <span class="material-symbols-sharp">visibility</span>
+                            <span class="material-symbols-sharp">share</span>
+                        </div>
+                    </div>
+                    <div class="project-cont">
+                        <div class="project-text">
+                            <p class="project-title">Less Cool Project</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus veniam rem
+                                perferendis
+                                ut
+                                nam optio placeat fugit, itaque atque, modi sed totam, aut voluptatum impedit. Eveniet
+                                earum
+                                fugiat iste dolorem?</p>
+                        </div>
+                        <div class="project-icons">
+                            <span class="material-symbols-sharp project-icon">star</span>
+                            <span class="material-symbols-sharp">visibility</span>
+                            <span class="material-symbols-sharp">share</span>
+                        </div>
+                    </div>
+                    <div class="project-cont">
+                        <div class="project-text">
+                            <p class="project-title">Easy Peasy App</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus veniam rem
+                                perferendis
+                                ut
+                                nam optio placeat fugit, itaque atque, modi sed totam, aut voluptatum impedit. Eveniet
+                                earum
+                                fugiat iste dolorem?</p>
+                        </div>
+                        <div class="project-icons">
+                            <span class="material-symbols-sharp project-icon">star</span>
+                            <span class="material-symbols-sharp">visibility</span>
+                            <span class="material-symbols-sharp">share</span>
+                        </div>
+                    </div>
+                    <div class="project-cont">
+                        <div class="project-text">
+                            <p class="project-title">Money Maker</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus veniam rem
+                                perferendis
+                                ut
+                                nam optio placeat fugit, itaque atque, modi sed totam, aut voluptatum impedit. Eveniet
+                                earum
+                                fugiat iste dolorem?</p>
+                        </div>
+                        <div class="project-icons">
+                            <span class="material-symbols-sharp project-icon">star</span>
+                            <span class="material-symbols-sharp">visibility</span>
+                            <span class="material-symbols-sharp">share</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-right">
+                <div>
+                    <p class="main-titles">Announcements</p>
+                    <div class="announce-cont">
+
+                        <p class="announce-title">Site Maintenance</p>
+                        <p class="announce-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                            recusandae
+                            consequuntur, nulla ducimus
+                            labore sed cupiditate quasi non dolorem animi dolorum quis explicabo totam fugiat
+                            praesentium optio
+                            eaque debitis ratione.</p>
+                        <hr>
+                        <p class="announce-title">Community Share Day</p>
+                        <p class="announce-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                            recusandae
+                            consequuntur, nulla ducimus
+                            labore sed cupiditate quasi non dolorem animi dolorum quis explicabo totam fugiat
+                            praesentium optio
+                            eaque debitis ratione.</p>
+                        <hr>
+                        <p class="announce-title">Updated Privacy Policy</p>
+                        <p class="announce-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                            recusandae
+                            consequuntur, nulla ducimus
+                            labore sed cupiditate quasi non dolorem animi dolorum quis explicabo totam fugiat
+                            praesentium optio
+                            eaque debitis ratione.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="main-titles">Trending</div>
+                    <div class="trending-cont">
+
+                        <div class="trending-profile">
+                            <img src="images/dog.jpg" alt="dog profile pic">
+                            <div>
+                                <p class="profile-name">@tegan</p>
+                                <p>World Peace Builder</p>
+                            </div>
+                        </div>
+                        <div class="trending-profile">
+                            <img src="images/flamingo.jpg" alt="flamingo profile pic">
+                            <div>
+                                <p class="profile-name">@flam</p>
+                                <p>Rose Tinted Glasses</p>
+                            </div>
+                        </div>
+                        <div class="trending-profile">
+                            <img src="images/fox.jpg" alt="fox profile pic">
+                            <div>
+                                <p class="profile-name">@mrFantastic</p>
+                                <p>Hole Digger</p>
+                            </div>
+                        </div>
+                        <div class="trending-profile">
+                            <img src="images/turtle.jpg" alt="turtle profile pic">
+                            <div>
+                                <p class="profile-name">@squirt</p>
+                                <p>Relaxation App</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
